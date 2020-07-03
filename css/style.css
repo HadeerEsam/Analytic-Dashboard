@@ -1,0 +1,106 @@
+body{
+    font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+header{
+    background-color: rgb(29, 29, 29);
+}
+header img{
+    border-radius: 50%;
+    width: 40px;
+}
+
+.fa-pencil-alt{
+    color: #cccccc;
+   
+}
+#dashboard{
+    overflow: hidden;
+}
+#dashboard h4{
+    font-size: 1.2rem;
+}
+
+
+#widgets .btn-color{
+    color: black;
+    border: rgb(231, 231, 231) 1.5px solid;
+    border-radius: 5px;
+    text-align: left;
+    font-size: smaller;
+}
+.widget{
+    width: 100px;
+    height: 90px;
+    border: solid #cccccc 1px;
+}
+#slots{
+    border-left: #cccccc solid 1px;  
+    background-color: #f1f1f1;
+}
+#slots .slot i{
+    color: #f3f3f3;
+    
+}
+#slots .disabled-slot i{
+    color: #ececec;
+}
+.noGutters{
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.slot,.disabled-slot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #fefefe;
+    margin-bottom: 2rem;
+    border: dashed 1.5px #cccccc;
+    font-size: 20px;
+
+}
+.disabled-slot{
+    background-color: #f3f3f3;
+}
+.small-slots >[class*="col-"]{
+    height: 160px;
+}
+.last-slots>[class*="col-"]{
+    height: 250px;
+}
+.enabled-slots{
+    height: 300px;
+}
+.buttons .back-btn{
+    color: rgb(180, 180, 180);
+    border: rgb(231, 231, 231) 1.5px solid;
+}
+/********************************** medium screen ************************************************/
+@media screen and (min-width:768px){
+    #widgets{
+        border-right: #cccccc solid 1px;  
+    }
+    #widgets .btn-color{
+        font-size: large;
+    }
+    .widget{
+        width: 210px;
+        height: 110px;
+    }
+    #dashboard h4{
+        font-size: 1.5rem;
+    }
+    #slots{
+        border-left: none;  
+    }
+}
+
+/********************************* large  screens *******************************************/
+@media screen and (min-width:992px){
+
+    .last-slots>[class*="col-"]{
+        height: auto;
+    }
+
+}
+
