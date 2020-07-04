@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    
+    <!--******************************* nav bar section *******************************-->
      <header class=" py-2 px-3 ">
          <ul class="nav text-white d-flex justify-content-between text-center alig-item-center py-1">
              <li class="nav-item pt-2">dashbang</li>
@@ -17,37 +17,40 @@
          </ul>
      </header>
 
+     <!--******************************* dashboard section *******************************-->
      <section id="dashboard" >
          <h4 class="py-3 px-3 border-bottom border-muted mb-0">Drew's Analytics Dashboard <i class="fas fa-pencil-alt  ml-3 fa-xs "></i></h4>
 
         <div class="dashboard-contant d-flex">
-            <div id="widgets" class="py-4 px-md-1 d-flex flex-column align-items-center ">
-                <button class="btn btn-color px-md-5  px-2 "><i class="fas fa-plus mr-md-2  fa-sm  "></i> New Widget</button>
+
+     <!--******************************* widgets section *******************************-->    
+            <div id="widgets" class="py-4 px-md-1 d-flex flex-column align-items-center  ">
+                <button  class="btn btn-color px-md-5  px-2 mb-4"><i class="fas fa-plus mr-md-2  fa-sm  "></i> New Widget</button>
    
-                <div class="widget mx-3 my-4 ">
-                    <div class="widget-info h-100 ">
-                        <img src="images/request.png" class="w-100 h-100" alt="request chart">
+                <div id="one" class="widget mx-3 mb-4 ">
+                    <div id="widget1" class="widget-info w-100 h-100"draggable="true">
+                        <img src="images/request.png" class="w-100 h-75 " draggable="false" alt="request chart">
                         <p class="text-primary mt-md-3 text-center">Active Users</p>
                    </div>
                </div>
    
-                <div class="widget mx-3 my-4 ">
-                    <div class="widget-info h-100 ">
-                        <img src="images/adobe_analytics_real-time_dashboard_sample_.png" class="w-100 h-100"  alt="">
+                <div id="two" class="widget mx-3 mb-4">
+                    <div id="widget2"  class="widget-info w-100 h-100 " draggable="true">
+                        <img src="images/adobe_analytics_real-time_dashboard_sample_.png" draggable="false" class="w-100 h-75 "  alt="real time analysis">
                         <p class="text-primary mt-md-3 text-center">Revenue/ Requests</p>
                        </div>
                    </div>
    
-                <div class="widget mx-3 my-4 ">
-                   <div class="widget-info h-100 ">
-                       <img src="images/google-analytics.jpg" class="w-100 h-100"  alt="">
+                <div id="three" class="widget mx-3 mb-4">
+                   <div id="widget3"  class="widget-info  w-100 h-100" draggable="true">
+                       <img src="images/google-analytics.jpg" draggable="false"  class="w-100 h-75 "  alt="google analytics">
                        <p class="text-primary mt-md-3 text-center">Top Active Geos</p>
                       </div>
                   </div>
    
-                  <div class="widget mx-3 my-4 ">
-                   <div class="widget-info h-100">
-                       <img src="images/google-analytics-event-tracking-tracked-events-example.jpg" class="w-100 h-100"  alt="">
+                  <div id="four" class="widget mx-3 mb-4">
+                   <div id="widget4"  class="widget-info w-100 h-100" draggable="true">
+                       <img src="images/google-analytics-event-tracking-tracked-events-example.jpg" draggable="false" class="w-100 h-75 "  alt="events analytics">
                        <p class="text-primary mt-md-3 text-center">Events</p>
                       </div>
                   </div>
@@ -58,20 +61,20 @@
    
    
             
+     <!--******************************* drop slots section *******************************-->    
    
             <div id="slots" class="py-4 col ">
                 <p class="px-md-2">Drag a widget into an open dashboard slot.</p>
 
                     <div class="row noGutters ">
-                        <div class="col-md-6 mb-3 px-0 px-md-2 enabled-slots">
-                           <div class="slot ">
-                               <i class="fas fa-plus-circle  fa-2x  "></i>
+                        <div  class="col-md-6 mb-3 px-0 px-md-2 enabled-slots position-relative" >
+                           <div id='slot1' class="slot ">
+                               <!-- <i class="fas fa-plus-circle  fa-2x  "></i> -->
                            </div>
                         </div>
-                        <div class="col-md-6 mb-3 px-0 px-md-2 enabled-slots ">
-                           <div class="slot ">
-                               <i class="fas fa-plus-circle  fa-2x  "></i>
-   
+                        <div  class="col-md-6 mb-3 px-0 px-md-2 enabled-slots position-relative">
+                           <div id='slot2' class="slot ">
+                               <!-- <i class="fas fa-plus-circle  fa-2x  "></i> -->
                            </div>
                         </div>
                     </div>
@@ -140,7 +143,7 @@
    
                 <div class="buttons  text-right ">
                     <button class="btn py-2  back-btn btn-light mr-sm-2 px-3"><i class="fas fa-angle-left mr-2  "></i> Back</button>
-                    <button class="btn py-2 btn-primary px-4 ">Finish</button>
+                    <button onclick='save()' class="btn py-2 btn-primary px-4 ">Finish</button>
                 </div>
    
             </div>
