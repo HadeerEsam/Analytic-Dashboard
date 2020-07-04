@@ -1,6 +1,8 @@
 body{
     font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+/* ******************************* nav part ******************************* */
 header{
     background-color: rgb(29, 29, 29);
 }
@@ -9,18 +11,16 @@ header img{
     width: 40px;
 }
 
+/* ******************************* dashboard layout ******************************* */
 .fa-pencil-alt{
     color: #cccccc;
-   
 }
-#dashboard{
-    overflow: hidden;
-}
+
 #dashboard h4{
     font-size: 1.2rem;
 }
 
-
+/*  ******************************* widget part *******************************  */
 #widgets .btn-color{
     color: black;
     border: rgb(231, 231, 231) 1.5px solid;
@@ -30,9 +30,11 @@ header img{
 }
 .widget{
     width: 100px;
-    height: 90px;
+    height: 200px;
     border: solid #cccccc 1px;
 }
+
+/* ******************************* drop slots section ******************************* */
 #slots{
     border-left: #cccccc solid 1px;  
     background-color: #f1f1f1;
@@ -57,7 +59,6 @@ header img{
     margin-bottom: 2rem;
     border: dashed 1.5px #cccccc;
     font-size: 20px;
-
 }
 .disabled-slot{
     background-color: #f3f3f3;
@@ -70,7 +71,9 @@ header img{
 }
 .enabled-slots{
     height: 300px;
+    
 }
+
 .buttons .back-btn{
     color: rgb(180, 180, 180);
     border: rgb(231, 231, 231) 1.5px solid;
@@ -85,7 +88,7 @@ header img{
     }
     .widget{
         width: 210px;
-        height: 110px;
+        height: 210px;
     }
     #dashboard h4{
         font-size: 1.5rem;
@@ -93,6 +96,7 @@ header img{
     #slots{
         border-left: none;  
     }
+    
 }
 
 /********************************* large  screens *******************************************/
