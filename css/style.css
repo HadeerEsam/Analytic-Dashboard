@@ -147,6 +147,24 @@ header img{
     border: dashed 1.5px #cccccc;
     font-size: 20px;
 }
+
+.edit{
+    position: absolute;
+    top: 0;
+    left: 48.5%;
+    background-color: rgb(219, 219, 223);
+    width:50%;   
+    border: solid 1px rgb(202, 202, 202);
+    border-radius: 4px;
+    display: none;
+    transition: all 0.5s;
+}
+.edit li{
+    cursor: pointer;
+}
+.enabled-slots:hover .edit{
+    display: flex;
+}
 .disabled-slot>[id*='slot']{
     background-color: #f3f3f3;
     display: flex;

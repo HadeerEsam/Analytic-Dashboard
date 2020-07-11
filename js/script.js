@@ -73,7 +73,6 @@ for(slot of dropslot){
         dropTries++;
         event.preventDefault();
         styleAtDrop();
-
         // add widget to drop area
         let data = event.dataTransfer.getData("Text");
         this.appendChild(document.getElementById(data));
