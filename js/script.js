@@ -95,14 +95,14 @@ for(slot of dropslot){
             } 
              // return widget to initial position when another widget put over it
             else{
-                returnInitialPosition();
+                returnInitialPosition(childId);
              }  
             }
         }
     });
 }
  // return widget to initial position when another widget put over it
-function returnInitialPosition(){
+function returnInitialPosition(childId){
     switch(childId){
         case "widget1":
             $("#one").append($(`#${childId}`));
@@ -117,8 +117,8 @@ function returnInitialPosition(){
              $("#three").css('border','1px solid #cccccc');
             break;
          case "widget4":
-             $("#three").append($(`#${childId}`));
-             $("#three").css('border','1px solid #cccccc');
+             $("#four").append($(`#${childId}`));
+             $("#four").css('border','1px solid #cccccc');
             break;
     }
 }
@@ -138,6 +138,93 @@ function styleAtDrop(){
 }
 
 
+// closing widget menue
+$('#close').click(function () { 
+    $('#widgets').animate({left:'-100%'},1000);
+});
+
+// widget menue sliding and scrolling
+$(".widget-options li").click(function(){
+    $('#widgets').animate({left:'0px'},1000);
+    let offsetTop;
+    switch($(this).attr('id')){
+        case 'bar-icon':
+         offsetTop=$("#close").offset().top;
+         $('#widgets').animate({scrollTop:offsetTop},700);
+         break;
+        case 'line-icon':
+         offsetTop=$("#two").offset().top;
+         $('#widgets').animate({scrollTop:offsetTop },700);
+         break;
+        case 'pie-icon':
+         offsetTop=$("#three").offset().top; 
+         $('#widgets').animate({scrollTop:offsetTop},700);
+         break;
+        case 'area-icon':
+         offsetTop=$("#four").offset().top;  
+         $('#widgets').animate({scrollTop:offsetTop},700);
+         break;
+
+    }
+
+});
+
+
+//Enter full screen
+
+/* Get into full screen */
+function GoInFullscreen(element) {
+	if(element.requestFullscreen)
+		element.requestFullscreen();
+	else if(element.mozRequestFullScreen)
+		element.mozRequestFullScreen();
+	else if(element.webkitRequestFullscreen)
+		element.webkitRequestFullscreen();
+	else if(element.msRequestFullscreen)
+		element.msRequestFullscreen();
+}
+
+/* Get out of full screen */
+function GoOutFullscreen() {
+	if(document.exitFullscreen)
+		document.exitFullscreen();
+	else if(document.mozCancelFullScreen)
+		document.mozCancelFullScreen();
+	else if(document.webkitExitFullscreen)
+		document.webkitExitFullscreen();
+	else if(document.msExitFullscreen)
+		document.msExitFullscreen();
+}
+
+/* Is currently in full screen or not */
+function IsFullScreenCurrently() {
+	var full_screen_element = document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement || null;
+	
+	// If no element is in full-screen
+	if(full_screen_element === null)
+		return false;
+	else
+		return true;
+}
+//full screen button function
+
+$('.nav-icons .fullscreen').click(function(){
+    if(IsFullScreenCurrently())
+        GoOutFullscreen();
+    else
+        GoInFullscreen($("html").get(0));
+});
+
+// delete dashboard
+$('.nav-icons .delete').click(function(){
+    widgetIds=JSON.parse(localStorage.getItem("widgetId"));
+    for (id of widgetIds){
+        returnInitialPosition(id);
+    }
+    localStorage.clear();
+    widgetIds=[];
+    $('.slot').html('<i class="fas fa-plus-circle  fa-2x  "></i>');
+});
 
 
 
