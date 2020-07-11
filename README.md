@@ -1,2 +1,2 @@
 # Analytic-Dashboard
-simple drag and drop analytic dashboard
+Simple drag and drop analytic dashboard
