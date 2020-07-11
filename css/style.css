@@ -44,6 +44,7 @@ header img{
 .dashboard-status-bar{
     background-color: #ffffff;
     position: relative;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.164) inset;
 }
 .fa-pencil-alt{
     color: #cccccc;
@@ -70,6 +71,7 @@ header img{
     z-index: 9;
     background-color: rgb(6, 6, 48);
     transition: all 0.5s;
+    box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.63);
     
 }
 .widget-options i{
