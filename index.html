@@ -7,144 +7,183 @@
     <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,600;0,700;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
+    
+
+    
     <!--******************************* nav bar section *******************************-->
-     <header class=" py-2 px-3 ">
-         <ul class="nav text-white d-flex justify-content-between text-center alig-item-center py-1">
-             <li class="nav-item pt-2">dashbang</li>
-             <li class="nav-item"><img src="images/client1.jpg" class="mr-2" alt=""> Drew Christiano <i class="fas fa-angle-down ml-2"></i></li>
-         </ul>
-     </header>
-
+    <section class="head">
+        <header class="  px-3 ">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a class="navbar-brand" href="#" ><img src="images/Logo-preview-removebg-preview.png" alt=""> Dashbang</a>
+                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav pl-5 mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home </a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link " href="#">Data Sources</a>
+                       </li>
+                       <li class="nav-item">
+                           <a class="nav-link active" href="#">Dashboard</a>
+                       </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="#">Contact Us</a>
+                        </li>
+                        
+                    </ul>
+                   <ul class="navbar-nav  mt-2 mt-lg-0">
+                       <li class="nav-item dropdown">
+                           <a class="nav-link " href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/client1.jpg" class="mr-2" alt=""> Drew Christiano <i class="fas fa-angle-down ml-2"></i></a>
+                           <div class="dropdown-menu " aria-labelledby="dropdownId">
+                               <a class="dropdown-item" href="#">Account Settings</a>
+                               <a class="dropdown-item" href="#">Log out</a>
+                           </div>
+                       </li>
+                   </ul>
+                    
+                </div>
+            </nav>
+        </header>
+        
+           <div class="dashboard-status-bar border-bottom border-muted py-0 py-md-1 px-1 px-md-3 d-flex flex-wrap ">
+               <!-- <h4 class="d-inline ">Drew's Analytics Dashboard <i class="fas fa-pencil-alt  ml-3 fa-xs "></i></h4> -->
+               <form class="form-inline col-md-6 px-1 px-md-3">
+                  <button class="btn save-btn my-1 my-md-2 px-2 " type="submit">Search</button>
+                  <input class="form-control ml-1 w-75" type="text" placeholder="Type here to search">
+              </form>
+               <div class="nav-icons py-2  col-md-6">
+                  <ul class="nav float-right">
+                      <li class="nav-item">
+                          <a class="nav-link fullscreen" href="#"><i class="fas fa-expand    "></i></a>
+                      </li>
+                      <li class="nav-item">
+                         <a class="nav-link delete " href="#"><i class="fas fa-trash-alt   "></i></a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link active settings" href="#"><i class="fas fa-cogs "></i></a>
+                     </li>                
+                  </ul>
+               </div>
+          </div>
+        
+    </section>
+    
      <!--******************************* dashboard section *******************************-->
-     <section id="dashboard" >
-         <h4 class="py-3 px-3 border-bottom border-muted mb-0">Drew's Analytics Dashboard <i class="fas fa-pencil-alt  ml-3 fa-xs "></i></h4>
+     <section id="dashboard"class='py-5 mt-5'>
+       
+        <div class="dashboard-contant py-5 my-5 mt-md-0 pt-md-4  position-relative">
 
-        <div class="dashboard-contant d-flex">
+      <!-- ******************************* menue of charts shapes *******************************-->
+            <div class="widget-options py-5">
+                <ul class="navbar-nav my-5 py-5 d-flex justify-content-around align-items-around h-75 text-white">
+                    <li id="bar-icon"  class="mt-5 mt-md-0 p-2 "><i class="fas fa-chart-bar "></i></li>
+                    <li id="line-icon" class="p-2"><i class="fas fa-chart-line    "></i></li>
+                    <li id="pie-icon" class="p-2"><i class="fas fa-chart-pie   "></i></li>
+                    <li id="area-icon" class="p-2"><i class="fas fa-chart-area   "></i></li>
+                </ul>
+                
+            </div>
 
      <!--******************************* widgets section *******************************-->    
-            <div id="widgets" class="py-4 px-md-1 d-flex flex-column align-items-center  ">
-                <button  class="btn btn-color px-md-5  px-2 mb-4"><i class="fas fa-plus mr-md-2  fa-sm  "></i> New Widget</button>
-   
+            <div id="widgets" class="pb-3  pl-5 flex-column align-items-center  ">
+                <div  class="mb-4 px-2 text-right "><i id="close" class="far fa-times-circle  fa-lg  "></i></div>
+
                 <div id="one" class="widget mx-3 mb-4 ">
                     <div id="widget1" class="widget-info w-100 h-100"draggable="true">
-                        <img src="images/request.png" class="w-100 h-75 " draggable="false" alt="request chart">
-                        <p class="text-primary mt-md-3 text-center">Active Users</p>
-                   </div>
+                        <canvas id="chart1" class="w-100 chart1"></canvas>
+                        <p class="text-primary  text-center ">Active Users</p>
+                    </div>
                </div>
    
                 <div id="two" class="widget mx-3 mb-4">
                     <div id="widget2"  class="widget-info w-100 h-100 " draggable="true">
-                        <img src="images/adobe_analytics_real-time_dashboard_sample_.png" draggable="false" class="w-100 h-75 "  alt="real time analysis">
-                        <p class="text-primary mt-md-3 text-center">Revenue/ Requests</p>
+                        <canvas id="chart2" class="w-100 "></canvas>
+                        <p class="text-primary  text-center">Revenue/ Requests</p>
                        </div>
                    </div>
    
                 <div id="three" class="widget mx-3 mb-4">
                    <div id="widget3"  class="widget-info  w-100 h-100" draggable="true">
-                       <img src="images/google-analytics.jpg" draggable="false"  class="w-100 h-75 "  alt="google analytics">
-                       <p class="text-primary mt-md-3 text-center">Top Active Geos</p>
+                    <canvas id="chart3" class="w-100 "></canvas>
+                       <p class="text-primary  text-center">Top Active Geos</p>
                       </div>
                   </div>
    
                   <div id="four" class="widget mx-3 mb-4">
-                   <div id="widget4"  class="widget-info w-100 h-100" draggable="true">
-                       <img src="images/google-analytics-event-tracking-tracked-events-example.jpg" draggable="false" class="w-100 h-75 "  alt="events analytics">
-                       <p class="text-primary mt-md-3 text-center">Events</p>
+                   <div id="widget4"  class="widget-info w-100 h-100 " draggable="true">
+                    <canvas id="chart4" class="w-100 "></canvas>
+                       <p class="text-primary  text-center">Events</p>
                       </div>
                   </div>
+               
    
-                </div>
+            </div>
                 
-   
-   
    
             
      <!--******************************* drop slots section *******************************-->    
    
-            <div id="slots" class="py-4 col ">
-                <p class="px-md-2">Drag a widget into an open dashboard slot.</p>
+            <div id="slots" class="py-4 px-md-5 px-3">
+               <div class="container-fluid pl-5 ">
+                <h5 class="px-md-2 mb-3">Drag a widget into an open dashboard slot.</h5>
+                <button  class="btn save-btn px-md-4 ml-2  px-2 mb-4"><i class="fas fa-plus mr-md-2  fa-sm  "></i> New Widget</button>
 
-                    <div class="row noGutters ">
-                        <div  class="col-md-6 mb-3 px-0 px-md-2 enabled-slots position-relative" >
+                    <div class="row flex-wrap noGutters mb-4">
+                        <div  class=" mb-4 px-0 px-md-2 enabled-slots position-relative" >
                            <div id='slot1' class="slot ">
-                               <!-- <i class="fas fa-plus-circle  fa-2x  "></i> -->
                            </div>
                         </div>
-                        <div  class="col-md-6 mb-3 px-0 px-md-2 enabled-slots position-relative">
+                        <div  class=" mb-4 px-0 px-md-2 enabled-slots position-relative">
                            <div id='slot2' class="slot ">
-                               <!-- <i class="fas fa-plus-circle  fa-2x  "></i> -->
                            </div>
                         </div>
+
+                        <div  class=" mb-4 px-0 px-md-2 disabled-slot  position-relative" >
+                            <div id='slot3' class=" ">
+                                <i class="fas fa-times-circle  fa-2x  "></i>
+                            </div>
+                         </div>
+                         <div  class=" mb-4 px-0 px-md-2 disabled-slot position-relative">
+                            <div id='slot4' class=" ">
+                                <i class="fas fa-times-circle  fa-2x  "></i>
+                            </div>
+                         </div>
+
+                         <div  class=" mb-4 px-0 px-md-2 disabled-slot position-relative" >
+                            <div id='slot5' class=" ">
+                                <i class="fas fa-times-circle  fa-2x  "></i>
+                            </div>
+                         </div>
+                         <div  class=" mb-4 px-0 px-md-2 disabled-slot position-relative">
+                            <div id='slot6' class="">
+                                <i class="fas fa-times-circle  fa-2x  "></i>
+                            </div>
+                         </div>
+                         <div  class=" mb-4 px-0 px-md-2 disabled-slot w-75 position-relative" >
+                            <div id='slot7' class=" ">
+                                <i class="fas fa-times-circle  fa-2x  "></i>
+                            </div>
+                         </div>
+                         <div  class=" mb-4 px-0 px-md-2 disabled-slot w-25 position-relative">
+                            <div id='slot8' class="">
+                                <i class="fas fa-times-circle  fa-2x  "></i>
+                            </div>
+                         </div>
                     </div>
-   
-                    <div class="row noGutters">
-                       <div class="col-md-12 col-lg-6 d-flex flex-wrap px-0 mb-3 small-slots">
-                           <div class="col-md-6 col-lg-4 mb-3 px-0 px-md-2">
-                              <div class="disabled-slot">
-                                  <i class="fas fa-times-circle  fa-2x  "></i>
-                              </div>
-                           </div>
-   
-                           <div class="col-md-6 col-lg-4 mb-3 px-0 px-md-2">
-                               <div class="disabled-slot">
-                                  <i class="fas fa-times-circle  fa-2x  "></i>
-   
-                               </div>
-                           </div>
-   
-                           <div class="col-md-6 col-lg-4 mb-3 px-0 px-md-2">
-                               <div class="disabled-slot">
-                                  <i class="fas fa-times-circle  fa-2x  "></i>
-                                   
-                               </div>
-                           </div>
-                           <div class="col-md-6 col-lg-4 mb-3 px-0 px-md-2">
-                               <div class="disabled-slot">
-                                  <i class="fas fa-times-circle  fa-2x  "></i>
-   
-                               </div>
-                            </div>
-    
-                            <div class="col-md-6 col-lg-4 mb-3 px-0 px-md-2">
-                                <div class="disabled-slot">
-                                  <i class="fas fa-times-circle  fa-2x  "></i>
-                                    
-                                </div>
-                            </div>
-    
-                            <div class="col-md-6 col-lg-4 mb-3 px-0 px-md-2">
-                                <div class="disabled-slot">
-                                  <i class="fas fa-times-circle  fa-2x  "></i>
-   
-                                </div>
-                            </div>
-                       </div>
-   
-                       <div class="col-md-12 col-lg-6 d-flex px-0 flex-wrap mb-3 last-slots">
-                           <div class="col-md-6 mb-3 px-0 px-md-2">
-                              <div class="disabled-slot">
-                               <i class="fas fa-times-circle  fa-2x  "></i>
-   
-                              </div>
-                           </div>
-   
-                           <div class="col-md-6 mb-3 px-0 px-md-2">
-                               <div class="disabled-slot ">
-                                  <i class="fas fa-times-circle  fa-2x  "></i>
-   
-                               </div>
-                           </div>
-                          
-                       </div>
-                       
-                   </div>
-   
-                <div class="buttons  text-right ">
-                    <button class="btn py-2  back-btn btn-light mr-sm-2 px-3"><i class="fas fa-angle-left mr-2  "></i> Back</button>
-                    <button onclick='save()' class="btn py-2 btn-primary px-4 ">Finish</button>
-                </div>
+
+                <div class="button text-right  ">
+                    <button class="btn py-2  back-btn  mr-sm-2 px-3"><i class="fas fa-angle-left mr-2  "></i> Back</button>
+                    <button onclick='save()' class="btn py-2 save-btn px-4 ">Save</button>
+                 </div>
+                
+               </div>
    
             </div>
         </div>
@@ -156,5 +195,8 @@
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script src="js/charts.js"></script>
+  
 </body>
 </html>
