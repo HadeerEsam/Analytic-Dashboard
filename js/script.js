@@ -216,13 +216,23 @@ $('.nav-icons .fullscreen').click(function(){
 
 // delete dashboard
 $('.nav-icons .delete').click(function(){
-    widgetIds=JSON.parse(localStorage.getItem("widgetId"));
+    if(localStorage.getItem("widgetId")==null){
+        let slots=$('.slot');
+        for (i of slots){
+            let widget=slots.children().attr('id');
+            returnInitialPosition(widget);
+        }
+        // $('.slot').html('<i class="fas fa-plus-circle  fa-2x  "></i>');
+        
+    }else{
+        widgetIds=JSON.parse(localStorage.getItem("widgetId"));
     for (id of widgetIds){
         returnInitialPosition(id);
     }
     localStorage.clear();
     widgetIds=[];
     $('.slot').html('<i class="fas fa-plus-circle  fa-2x  "></i>');
+    }
 });
 
 
